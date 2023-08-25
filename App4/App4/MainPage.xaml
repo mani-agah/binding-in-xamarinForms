@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App4.MainPage">
+    <StackLayout>
+        <StackLayout Orientation="Vertical" HeightRequest="80" VerticalOptions="Start" BackgroundColor="LightBlue">
+            <Image HeightRequest="80" Source="icon.png" />
+        </StackLayout>
+        <StackLayout>
+            <Entry x:Name="EntryText" Placeholder="Enter Text"/>
+        </StackLayout>
+        <Button Clicked="BtnSave"  BackgroundColor="green" Text="SAVE" />
+        <Button Clicked="BtnErase" BackgroundColor="red" Text="ERASE" />
+        <StackLayout BackgroundColor="LightGray">
+            <ListView x:Name="ListV" ItemsSource="{Binding GetText}"  ItemTapped="ListV_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding MyProperty}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
